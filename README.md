@@ -18,9 +18,33 @@ python workspace.py check
 python workspace.py audit --output ../.local/publication-audit.json
 ```
 
-`configure` は親ディレクトリのREADME・AGENTS・.gitignore・AquaBeacon.code-workspaceだけを再生成します。プロジェクトのclone・初期化・リモート変更・commit・pushは行いません。既存リモートには移行前の内容があるため、新構成の公開後に確定したclone先を案内してください。
+`configure` は親ディレクトリのREADME・AGENTS・.gitignore・AquaBeacon.code-workspaceだけを再生成します。プロジェクトのclone・初期化・リモート変更・commit・pushは行いません。各公開リポジトリのURLは下表と `repositories.json` に記載しています。
 
-`check` は構成と元のGit履歴、`audit` は現在の追跡ファイルとignore対象外の未追跡ファイルを読み取ります。削除待ちの旧パスは別集計し、全履歴の秘密情報検査や第三者の配布許諾の確認を代替しません。両コマンドとも問題検出時は終了コード1です。
+`check` は全リポジトリの配置・入口・ライセンスを確認します。台帳の `history_scope: local_archive` は移行前履歴が保守者の手元だけにあることを示し、公開cloneではその履歴を要求しません。`audit` は現在の追跡ファイルとignore対象外の未追跡ファイルを読み取ります。全履歴の秘密情報検査や第三者の配布許諾の確認を代替しません。両コマンドとも問題検出時は終了コード1です。
+
+## 新しい環境で全体を取得する
+
+Python 3、Git、Git LFSを導入し、空の親フォルダで次を実行します。CAD・映像を含む全体のLFSデータは約4.5 GiBです。必要なプロジェクトだけを下表からcloneして開発することもできます。
+
+```sh
+git lfs install
+git clone https://github.com/AquaBeacon/workspace-tools.git
+```
+
+続いて親フォルダでPythonを起動し、次を実行します。既存フォルダは上書きしません。GitHub上の `.github` はローカルでは `organization` に配置します。
+
+```python
+import json
+import subprocess
+from pathlib import Path
+
+registry = json.loads(Path("workspace-tools/repositories.json").read_text(encoding="utf-8"))
+for repo in registry["repositories"]:
+    if not Path(repo["name"]).exists():
+        subprocess.run(["git", "clone", repo["url"] + ".git", repo["name"]], check=True)
+subprocess.run(["python", "workspace-tools/workspace.py", "configure"], check=True)
+subprocess.run(["python", "workspace-tools/workspace.py", "check"], check=True)
+```
 
 [開発ガイド](DEVELOPMENT.md)にセットアップ・入口・確認方法をまとめています。自作部分は [Apache License 2.0](LICENSE)。[第三者素材・依存の扱い](THIRD_PARTY.md)も参照してください。
 

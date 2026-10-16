@@ -42,4 +42,4 @@ python workspace-tools/workspace.py audit --output .local/publication-audit.json
 
 自作部分は **Apache License 2.0**。各リポジトリにLICENSE、NOTICE、THIRD_PARTY.mdを置いています。SDK・フォント・メーカー資料・キャラクターなど第三者の条件は保持します。
 
-この整理はローカルの開発構成です。既存のリモートと履歴を維持し、新しいGitHubリポジトリの作成・push・公開設定の変更はしていません。紹介サイトの既存運用は[サイトのREADME](aquabeacon.github.io/README.md)を参照してください。
+2026-10-16、対象17リポジトリを [AquaBeacon Organization](https://github.com/orgs/AquaBeacon/repositories) にpublicで公開しました。`habatan-game` は対象外です。公開先と取得手順は [workspace-tools](workspace-tools/README.md) を参照してください。新設15件は公開対象だけの初期履歴を持ち、移行前の開発履歴と手元専用データはローカルに保管しています。
