@@ -31,7 +31,7 @@ git lfs install
 git clone https://github.com/AquaBeacon/workspace-tools.git
 ```
 
-続いて親フォルダでPythonを起動し、次を実行します。既存フォルダは上書きしません。GitHub上の `.github` はローカルでは `organization` に配置します。
+続いて親フォルダでPythonを起動し、次を実行します。既存フォルダは上書きしません。GitHub上の `.github` はローカルでは `organization` に配置します。WindowsのCAD取得では長いパスが必要なため、clone時に `core.longpaths=true` を設定します。親フォルダもできるだけ短いパスを選んでください。
 
 ```python
 import json
@@ -41,7 +41,7 @@ from pathlib import Path
 registry = json.loads(Path("workspace-tools/repositories.json").read_text(encoding="utf-8"))
 for repo in registry["repositories"]:
     if not Path(repo["name"]).exists():
-        subprocess.run(["git", "clone", repo["url"] + ".git", repo["name"]], check=True)
+        subprocess.run(["git", "clone", "-c", "core.longpaths=true", repo["url"] + ".git", repo["name"]], check=True)
 subprocess.run(["python", "workspace-tools/workspace.py", "configure"], check=True)
 subprocess.run(["python", "workspace-tools/workspace.py", "check"], check=True)
 ```
