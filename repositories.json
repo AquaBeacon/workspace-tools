@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "repositories": [
+    {
+      "name": "docs",
+      "purpose": "システム仕様・設計文書",
+      "source": "docs",
+      "entrypoints": [
+        "README.md",
+        "AquaBeacon_詳細設計書.md"
+      ],
+      "checks": [],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/docs",
+      "url": "https://github.com/AquaBeacon/docs",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "hardware",
+      "purpose": "回路図・PCB・製造ツール",
+      "source": "Kicad_project",
+      "entrypoints": [
+        "pcb/README.md",
+        "pcb/build_child_main.py"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "ca4011486411e855d41e3264d2c4b8c85e0ad196",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/hardware",
+      "url": "https://github.com/AquaBeacon/hardware",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "mechanical",
+      "purpose": "筐体・機構・印刷一式",
+      "source": "Body_Models",
+      "entrypoints": [
+        "assemblies/README.md",
+        "parts/README.md"
+      ],
+      "checks": [
+        [
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests"
+        ]
+      ],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/mechanical",
+      "url": "https://github.com/AquaBeacon/mechanical",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "firmware",
+      "purpose": "親機・子機メイン基板ファームウェア",
+      "source": "CHILD_MAIN_test",
+      "entrypoints": [
+        "platformio.ini",
+        "include/child_main_pins.h",
+        "src/main.cpp"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "a6232ce949c43fdb91c0e100425b5f6f64afdcb1",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/firmware",
+      "url": "https://github.com/AquaBeacon/firmware",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "acoustic-tests",
+      "purpose": "TD04A送受信・波形・同期試験",
+      "source": "TD04A_test",
+      "entrypoints": [
+        "tx/platformio.ini",
+        "rx/platformio.ini",
+        "common/aquabeacon_config.h"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "765b33613ed519951996fca9a69fcdc66f1adfaa",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/acoustic-tests",
+      "url": "https://github.com/AquaBeacon/acoustic-tests",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "spresense-imu",
+      "purpose": "SPRESENSE IMUロガー・姿勢表示",
+      "source": "SONYspresenceIMU",
+      "entrypoints": [
+        "app",
+        "viewer/attitude_viewer.py",
+        "scripts/build.ps1"
+      ],
+      "checks": [
+        [
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests"
+        ]
+      ],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/spresense-imu",
+      "url": "https://github.com/AquaBeacon/spresense-imu",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "gnss-tools",
+      "purpose": "NEO-F9P受信機・RTK/PPK検証",
+      "source": "NEO-F9P-RTK-GNSS_test",
+      "entrypoints": [
+        "tools/requirements.txt",
+        "tools/verify_receiver.py"
+      ],
+      "checks": [],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/gnss-tools",
+      "url": "https://github.com/AquaBeacon/gnss-tools",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "dji-telemetry",
+      "purpose": "DJI動画メタデータ抽出",
+      "source": "GetDJI",
+      "entrypoints": [
+        "extract_dji_telemetry.py"
+      ],
+      "checks": [
+        [
+          "python",
+          "extract_dji_telemetry.py",
+          "--help"
+        ]
+      ],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/dji-telemetry",
+      "url": "https://github.com/AquaBeacon/dji-telemetry",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "aquabeacon-analysis",
+      "purpose": "実験データ解析・位置推定・可視化",
+      "source": "aquabeacon-analysis",
+      "entrypoints": [
+        "pyproject.toml",
+        "src/aquabeacon_analysis",
+        "tests"
+      ],
+      "checks": [
+        [
+          "python",
+          "-m",
+          "pytest",
+          "-q"
+        ]
+      ],
+      "existing_history": true,
+      "original_head": "3d3724b5fafc2791d763615940716a6d598831a8",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/aquabeacon-analysis",
+      "url": "https://github.com/AquaBeacon/aquabeacon-analysis",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "aquabeacon-sim",
+      "purpose": "真値付き測位・マッピングシミュレーション",
+      "source": "aquabeacon-sim",
+      "entrypoints": [
+        "pyproject.toml",
+        "docs/MATH_SPEC.md",
+        "tests"
+      ],
+      "checks": [
+        [
+          "python",
+          "-m",
+          "pytest",
+          "-q"
+        ]
+      ],
+      "existing_history": true,
+      "original_head": "fa686ad038c7fd88593e506c83d1b65814ec12cb",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/aquabeacon-sim",
+      "url": "https://github.com/AquaBeacon/aquabeacon-sim",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "topopt",
+      "purpose": "造形用トポロジー最適化・構造解析",
+      "source": "TO_printing",
+      "entrypoints": [
+        "topopt/pyproject.toml",
+        "docs/mcp.md",
+        "osmo_tripod"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "57541b1feb77cf083f5656a8ec85ee27448cfd18",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/topopt",
+      "url": "https://github.com/AquaBeacon/topopt",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "bambu-tools",
+      "purpose": "Bambuプリンタ・スライス連携",
+      "source": "BambuX1-print-MCPtools",
+      "entrypoints": [
+        "bambu_print.py",
+        "slice.py",
+        "mcp_server.py"
+      ],
+      "checks": [
+        [
+          "python",
+          "bambu_print.py",
+          "--help"
+        ]
+      ],
+      "existing_history": true,
+      "original_head": "4462fa76ba019225ff054e7211262b26fd7ee59f",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/bambu-tools",
+      "url": "https://github.com/AquaBeacon/bambu-tools",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "acoustic-circuits",
+      "purpose": "初期音響回路の設計資料",
+      "source": "Accoustic_modules",
+      "entrypoints": [
+        "Accoustic_modules.kicad_pro",
+        "LTspice"
+      ],
+      "checks": [],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/acoustic-circuits",
+      "url": "https://github.com/AquaBeacon/acoustic-circuits",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "assets",
+      "purpose": "ロゴ・説明図・紹介映像",
+      "source": "assets",
+      "entrypoints": [
+        "aquabeacon-brand/README.md",
+        "aquabeacon-film60/README.md"
+      ],
+      "checks": [],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/assets",
+      "url": "https://github.com/AquaBeacon/assets",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "aquabeacon.github.io",
+      "purpose": "公開紹介サイト",
+      "source": "AquaBeacon-OSS/aquabeacon.github.io",
+      "entrypoints": [
+        "site/index.html",
+        "site/en/index.html"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "2dd3c9f5c6597f1ea28757c5d7f7c9169403800c",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/aquabeacon.github.io",
+      "url": "https://github.com/AquaBeacon/aquabeacon.github.io",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "organization",
+      "purpose": "Organizationプロフィール・参加手順",
+      "source": "AquaBeacon-OSS/organization-live",
+      "entrypoints": [
+        "profile/README.md",
+        "CONTRIBUTING.md"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "276f19251cbc341ace8151cbc9f81430192b06e6",
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/.github",
+      "url": "https://github.com/AquaBeacon/.github",
+      "history_scope": "local_archive"
+    },
+    {
+      "name": "workspace-tools",
+      "purpose": "リポジトリ台帳・開発ワークスペース管理",
+      "source": "tools",
+      "entrypoints": [
+        "workspace.py",
+        "repositories.json"
+      ],
+      "checks": [
+        [
+          "python",
+          "workspace.py",
+          "check"
+        ]
+      ],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/workspace-tools",
+      "url": "https://github.com/AquaBeacon/workspace-tools",
+      "history_scope": "local_archive"
+    }
+  ]
+}
