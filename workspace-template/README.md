@@ -6,7 +6,7 @@
 
 | リポジトリ | 内容 | 開発手順 |
 | --- | --- | --- |
-| [obsidian](obsidian/README.md) | Obsidian共有知識・索引・テンプレート |
+| [obsidian](obsidian/README.md) | Obsidian共有知識・索引・テンプレート | [開発ガイド](obsidian/DEVELOPMENT.md) |
 | [docs](docs/README.md) | システム仕様・設計文書 | [開発ガイド](docs/DEVELOPMENT.md) |
 | [hardware](hardware/README.md) | 回路図・PCB・製造ツール | [開発ガイド](hardware/DEVELOPMENT.md) |
 | [mechanical](mechanical/README.md) | 筐体・機構・印刷一式 | [開発ガイド](mechanical/DEVELOPMENT.md) |
