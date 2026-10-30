@@ -6,6 +6,20 @@ Python標準ライブラリとGitを使用します。python workspace.py list /
 
 - [workspace.py](workspace.py)
 - [repositories.json](repositories.json)
+- [obsidian.py](obsidian.py)：知識ノート用の保管庫設定とリンク検証
+
+## Obsidianで知識をためる
+
+兄弟リポジトリを同じ親へ配置し、親フォルダで次を実行します。
+
+```sh
+python workspace-tools/obsidian.py configure
+python workspace-tools/obsidian.py check
+```
+
+Obsidianで親フォルダ全体を保管庫として開き、`obsidian/knowledge/ホーム.md` へ進みます。共有する索引・知識・テンプレート・Bases・Canvasはobsidianで管理します。自由メモ・日誌・添付はGit除外の `obsidian/knowledge/private/` が既定先です。既存の個人設定とメモは上書きせず、標準機能だけで使えます。必要なコアプラグインは有効化します。
+
+配置の正本は `repositories.json` の `obsidian`、運用方法は [docsの構成説明](https://github.com/AquaBeacon/docs/blob/main/maintainer/obsidian.md) に記載します。個人ノートのバックアップとクラウド同期の範囲は利用者が管理します。
 
 ## 開発とライセンス
 
@@ -20,7 +34,7 @@ python workspace.py audit --output ../.local/publication-audit.json
 
 `configure` は親ディレクトリのREADME・AGENTS・.gitignore・AquaBeacon.code-workspaceだけを再生成します。プロジェクトのclone・初期化・リモート変更・commit・pushは行いません。各公開リポジトリのURLは下表と `repositories.json` に記載しています。
 
-`check` は全リポジトリの配置・入口・ライセンスを確認します。台帳の `history_scope: local_archive` は移行前履歴が保守者の手元だけにあることを示し、公開cloneではその履歴を要求しません。`audit` は現在の追跡ファイルとignore対象外の未追跡ファイルを読み取ります。全履歴の秘密情報検査や第三者の配布許諾の確認を代替しません。両コマンドとも問題検出時は終了コード1です。
+`check` は全リポジトリの配置・入口・ライセンスを確認します。取得元の構成を保持するリポジトリは、台帳の `required_files` で必須文書を明示できます。2026-10-28追加の `firmware-experiments` は取得元にDEVELOPMENT・LICENSE・NOTICE・THIRD_PARTYがなく、`license: not-declared` として登録しています。この構成検証の成功はライセンス確認済みを意味しません。台帳の `history_scope: local_archive` は移行前履歴が保守者の手元だけにあることを示し、公開cloneではその履歴を要求しません。`audit` は現在の追跡ファイルとignore対象外の未追跡ファイルを読み取ります。全履歴の秘密情報検査や第三者の配布許諾の確認を代替しません。両コマンドとも問題検出時は終了コード1です。
 
 ## 新しい環境で全体を取得する
 
@@ -52,10 +66,12 @@ subprocess.run(["python", "workspace-tools/workspace.py", "check"], check=True)
 
 | リポジトリ | 内容 |
 | --- | --- |
+| [obsidian](https://github.com/AquaBeacon/obsidian) | Obsidian共有知識・索引・テンプレート |
 | [docs](https://github.com/AquaBeacon/docs) | システム仕様・設計文書 |
 | [hardware](https://github.com/AquaBeacon/hardware) | 回路図・PCB・製造ツール |
 | [mechanical](https://github.com/AquaBeacon/mechanical) | 筐体・機構・印刷一式 |
 | [firmware](https://github.com/AquaBeacon/firmware) | 親機・子機メイン基板ファームウェア |
+| [firmware-experiments](https://github.com/AquaBeacon/firmware-experiments) | 実験で使用した親機・子機・Spresense統合コード |
 | [acoustic-tests](https://github.com/AquaBeacon/acoustic-tests) | TD04A送受信・波形・同期試験 |
 | [spresense-imu](https://github.com/AquaBeacon/spresense-imu) | SPRESENSE IMUロガー・姿勢表示 |
 | [gnss-tools](https://github.com/AquaBeacon/gnss-tools) | NEO-F9P受信機・RTK/PPK検証 |

@@ -1,5 +1,14 @@
 {
   "schema_version": 1,
+  "obsidian": {
+    "vault_root": ".",
+    "knowledge_root": "obsidian/knowledge",
+    "home": "obsidian/knowledge/ホーム.md",
+    "templates": "obsidian/knowledge/templates",
+    "private_root": "obsidian/knowledge/private",
+    "base": "obsidian/knowledge/views/知識一覧.base",
+    "canvas": "obsidian/knowledge/知識マップ.canvas"
+  },
   "repositories": [
     {
       "name": "docs",
@@ -86,6 +95,33 @@
       "history_scope": "local_archive",
       "visibility": "public",
       "published_at": "2026-10-16"
+    },
+    {
+      "name": "firmware-experiments",
+      "purpose": "実験で使用した親機・子機・Spresense統合ファームウェア",
+      "source": "https://github.com/AquaBeacon/firmware-experiments",
+      "entrypoints": [
+        "platformio.ini",
+        "include/pins.h",
+        "src/main.cpp",
+        "docs/spec.md",
+        "docs/binary_log.md",
+        "firmware/spresense/logger/logger.ino"
+      ],
+      "checks": [],
+      "existing_history": true,
+      "original_head": "ab7857cf7e246bb388e9d28e310e677ca0499c69",
+      "license": "not-declared",
+      "third_party": true,
+      "github_repository": "AquaBeacon/firmware-experiments",
+      "url": "https://github.com/AquaBeacon/firmware-experiments",
+      "history_scope": "upstream",
+      "required_files": [
+        "README.md",
+        "AGENTS.md",
+        ".gitignore"
+      ],
+      "cloned_at": "2026-10-28"
     },
     {
       "name": "acoustic-tests",
@@ -361,7 +397,8 @@
       "source": "tools",
       "entrypoints": [
         "workspace.py",
-        "repositories.json"
+        "repositories.json",
+        "obsidian.py"
       ],
       "checks": [
         [
@@ -379,6 +416,27 @@
       "history_scope": "local_archive",
       "visibility": "public",
       "published_at": "2026-10-16"
+    },
+    {
+      "name": "obsidian",
+      "purpose": "Obsidian共有知識・索引・テンプレート",
+      "source": "docs/knowledge",
+      "entrypoints": [
+        "README.md",
+        "knowledge/ホーム.md",
+        "knowledge/views/知識一覧.base",
+        "knowledge/知識マップ.canvas"
+      ],
+      "checks": [],
+      "existing_history": false,
+      "original_head": null,
+      "license": "Apache-2.0",
+      "third_party": true,
+      "github_repository": "AquaBeacon/obsidian",
+      "url": "https://github.com/AquaBeacon/obsidian",
+      "history_scope": "local_archive",
+      "visibility": "public",
+      "published_at": "2026-10-31"
     }
   ]
 }

@@ -22,6 +22,7 @@ python -m venv .venv
 
 ```sh
 python workspace.py check
+python obsidian.py check
 ```
 
 ## データと関連リポジトリ

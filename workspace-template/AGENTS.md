@@ -7,3 +7,4 @@
 - 自作部分はApache-2.0。第三者のSDK・素材・ライセンス表示を維持する。
 - `.local/`は移行記録とバックアップ。生データ、認証情報、購入台帳は公開しない。
 - サイトの配信範囲はaquabeacon.github.io/site/のみ。公開状態をローカル移行と混同しない。
+- 知識の入口はobsidian/knowledge/ホーム.md。自由メモ・日誌・個人添付はGit除外のobsidian/knowledge/private/へ置く。

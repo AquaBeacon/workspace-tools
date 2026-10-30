@@ -32,8 +32,10 @@ def check(repositories: list[dict]) -> list[str]:
         result = git(p, 'rev-parse', '--show-toplevel')
         if result.returncode or Path(result.stdout.decode().strip()).resolve() != p.resolve():
             errors.append(f'{repo["name"]}: Git root is not this project')
-        for entry in ['README.md', 'AGENTS.md', 'DEVELOPMENT.md', 'LICENSE', 'NOTICE',
-                      'THIRD_PARTY.md', '.gitignore', *repo['entrypoints']]:
+        required_files = repo.get('required_files', [
+            'README.md', 'AGENTS.md', 'DEVELOPMENT.md', 'LICENSE', 'NOTICE',
+            'THIRD_PARTY.md', '.gitignore'])
+        for entry in [*required_files, *repo['entrypoints']]:
             if not (p / entry).exists():
                 errors.append(f'{repo["name"]}: missing {entry}')
         if repo.get('original_head') and repo.get('history_scope') != 'local_archive':
