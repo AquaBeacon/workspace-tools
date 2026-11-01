@@ -359,7 +359,9 @@
       "source": "AquaBeacon-OSS/aquabeacon.github.io",
       "entrypoints": [
         "site/index.html",
-        "site/en/index.html"
+        "site/en/index.html",
+        "site/research/index.html",
+        "site/map/index.html"
       ],
       "checks": [],
       "existing_history": true,

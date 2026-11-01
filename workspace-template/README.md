@@ -22,7 +22,7 @@
 | [bambu-tools](bambu-tools/README.md) | Bambuプリンタ・スライス連携 | [開発ガイド](bambu-tools/DEVELOPMENT.md) |
 | [acoustic-circuits](acoustic-circuits/README.md) | 初期音響回路の設計資料 | [開発ガイド](acoustic-circuits/DEVELOPMENT.md) |
 | [assets](assets/README.md) | ロゴ・説明図・紹介映像 | [開発ガイド](assets/DEVELOPMENT.md) |
-| [aquabeacon.github.io](aquabeacon.github.io/README.md) | 公開紹介サイト | [開発ガイド](aquabeacon.github.io/DEVELOPMENT.md) |
+| [aquabeacon.github.io](aquabeacon.github.io/README.md) | 紹介サイト・手法・研究結果・操作できる水中マップ | [開発ガイド](aquabeacon.github.io/DEVELOPMENT.md) |
 | [organization](organization/README.md) | Organizationプロフィール・参加手順 | [開発ガイド](organization/DEVELOPMENT.md) |
 | [workspace-tools](workspace-tools/README.md) | リポジトリ台帳・開発ワークスペース管理 | [開発ガイド](workspace-tools/DEVELOPMENT.md) |
 
