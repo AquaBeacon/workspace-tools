@@ -355,12 +355,13 @@
     },
     {
       "name": "aquabeacon.github.io",
-      "purpose": "公開紹介サイト",
+      "purpose": "公開紹介サイト・研究結果・写真付き水中マップ",
       "source": "AquaBeacon-OSS/aquabeacon.github.io",
       "entrypoints": [
         "site/index.html",
         "site/en/index.html",
         "site/research/index.html",
+        "site/research/reports/20261102-mapping/index.html",
         "site/map/index.html"
       ],
       "checks": [],

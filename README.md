@@ -82,6 +82,6 @@ subprocess.run(["python", "workspace-tools/workspace.py", "check"], check=True)
 | [bambu-tools](https://github.com/AquaBeacon/bambu-tools) | Bambuプリンタ・スライス連携 |
 | [acoustic-circuits](https://github.com/AquaBeacon/acoustic-circuits) | 初期音響回路の設計資料 |
 | [assets](https://github.com/AquaBeacon/assets) | ロゴ・説明図・紹介映像 |
-| [aquabeacon.github.io](https://github.com/AquaBeacon/aquabeacon.github.io) | 公開紹介サイト |
+| [aquabeacon.github.io](https://github.com/AquaBeacon/aquabeacon.github.io) | 紹介サイト・研究結果・写真付き水中マップ |
 | [organization](https://github.com/AquaBeacon/.github) | Organizationプロフィール・参加手順 |
 | [workspace-tools](https://github.com/AquaBeacon/workspace-tools) | リポジトリ台帳・開発ワークスペース管理 |
