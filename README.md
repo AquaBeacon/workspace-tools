@@ -85,3 +85,7 @@ subprocess.run(["python", "workspace-tools/workspace.py", "check"], check=True)
 | [aquabeacon.github.io](https://github.com/AquaBeacon/aquabeacon.github.io) | 紹介サイト・研究結果・写真付き水中マップ |
 | [organization](https://github.com/AquaBeacon/.github) | Organizationプロフィール・参加手順 |
 | [workspace-tools](https://github.com/AquaBeacon/workspace-tools) | リポジトリ台帳・開発ワークスペース管理 |
+
+## 公開サイトの入口
+
+[OSS総合サイト](https://aquabeacon.github.io/)に概要・仕組み・研究結果をまとめています。[つくる・使う](https://aquabeacon.github.io/build/)から実装と設計へ、[公開資料](https://aquabeacon.github.io/resources/)から全19リポジトリを用途別に探せます。[軌跡とマップ](https://aquabeacon.github.io/map/)はPC・スマホで操作できる固定URLです。サイトの編集元と生成先は台帳のentrypointsに記録しています。
